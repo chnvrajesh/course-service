@@ -1,6 +1,7 @@
 package com.nvrviews.courseservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.nvrviews.courseservice.entity.Course;
@@ -16,6 +17,7 @@ public class CourseService {
 		return courseRepository.save(course);
 	}
 
+	@Cacheable(value = "courseCache")
 	public Course getCourseById(Long courseId) {
 		// TODO Auto-generated method stub
 		return courseRepository.findByCourseId(courseId);
