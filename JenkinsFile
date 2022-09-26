@@ -8,12 +8,12 @@ pipeline {
                 sh '/usr/local/bin/docker'
                 //sh 'docker'
             }
-        }*/
+        }
         stage('checkout') {
             steps {
                 git credentialsId: 'bab965e9-4da3-4bfa-8844-0fc831ed1a73', url: 'https://github.com/chnvrajesh/course-service.git'
             }
-        }
+        }*/
         stage('build') {
             steps {
                 sh './gradlew clean build'
