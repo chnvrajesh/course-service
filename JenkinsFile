@@ -16,7 +16,7 @@ pipeline {
         }*/
         stage('build') {
             steps {
-                echo "${env.BUILD_NUMBER}"
+                echo "${env.BUILD_NUMBER}-#{env.BRANCH_NAME}"
                 sh './gradlew clean build'
                 //gradlew('clean', 'classes')
             }
