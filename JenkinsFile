@@ -16,7 +16,7 @@ pipeline {
         }*/
         stage('build') {
             steps {
-                sh 'echo ${env.BRANCH_NAME}-${env.BUILD_NUMBER}'
+                echo 'Running ${env.BUILD_ID} on ${env.JENKINS_URL}'
                 sh './gradlew clean build'
                 //gradlew('clean', 'classes')
             }
